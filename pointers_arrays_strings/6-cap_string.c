@@ -8,19 +8,17 @@
  */
 char *cap_string(char *str)
 {
-	int i = 0;
-	int sep;
-
+	int i = 0, j, sep;
 	char separators[] = " \t\n,;.!?\"(){}";
 
-	/* Capitalize the first character if needed */
+	/* Capitalize first character if needed */
 	if (str[0] >= 'a' && str[0] <= 'z')
 		str[0] -= 'a' - 'A';
 
 	while (str[i] != '\0')
 	{
 		sep = 0;
-		for (int j = 0; separators[j] != '\0'; j++)
+		for (j = 0; separators[j] != '\0'; j++)
 		{
 			if (str[i] == separators[j])
 			{
