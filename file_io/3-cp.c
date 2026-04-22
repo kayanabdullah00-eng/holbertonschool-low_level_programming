@@ -9,7 +9,11 @@ void close_fd(int fd);
 void copy_file(int fd_from, int fd_to, char *file_from, char *file_to);
 
 /**
- * main - copies file content
+ * main - copies content of one file to another
+ * @ac: argument count
+ * @av: argument vector
+ *
+ * Return: 0 on success, exit codes on failure
  */
 int main(int ac, char **av)
 {
@@ -45,7 +49,13 @@ int main(int ac, char **av)
 }
 
 /**
- * copy_file - copies content
+ * copy_file - copies data from one file to another
+ * @fd_from: source file descriptor
+ * @fd_to: destination file descriptor
+ * @file_from: name of source file
+ * @file_to: name of destination file
+ *
+ * Return: void
  */
 void copy_file(int fd_from, int fd_to, char *file_from, char *file_to)
 {
@@ -74,7 +84,10 @@ void copy_file(int fd_from, int fd_to, char *file_from, char *file_to)
 }
 
 /**
- * close_fd - closes file descriptor safely
+ * close_fd - closes a file descriptor safely
+ * @fd: file descriptor to close
+ *
+ * Return: void
  */
 void close_fd(int fd)
 {
